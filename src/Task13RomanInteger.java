@@ -25,7 +25,7 @@ import java.util.Scanner;
 public class Task13RomanInteger {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        String input = "MCMXCIV";
         int result = 0;
         String cd = "";
 

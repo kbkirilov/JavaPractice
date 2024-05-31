@@ -29,17 +29,8 @@ public class Task9PalindromeNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        String str = Integer.toString(num);
-        int length = str.length();
-        boolean isTrue = true;
 
-        for (int i = 0; i < length / 2; i++) {
-            if (str.charAt(i) != str.charAt(length - 1 - i)) {
-                isTrue = false;
-                break;
-            }
-        }
 
-        System.out.println(isTrue);
+
     }
 }

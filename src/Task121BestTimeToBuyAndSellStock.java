@@ -29,31 +29,27 @@ Constraints:
 
 public class Task121BestTimeToBuyAndSellStock {
     public static void main(String[] args) {
-        int[] prices = {20, 5, 4, 4};
+        int[] prices = {7, 6, 4, 3, 1};
 
         int cheapestPrice = Integer.MAX_VALUE;
         int mostExpensivePrice = Integer.MIN_VALUE;
-        int dayToBuy = 0;
-        int profit = 0;
+        int maxProfit = 0;
 
         for (int i = 0; i < prices.length; i++) {
+            int profit = 0;
+
+            // Gets the cheapest price
             if (prices[i] < cheapestPrice) {
                 cheapestPrice = prices[i];
-                dayToBuy = i;
             }
-            if (i == prices.length - 1 && cheapestPrice == prices[i]) {
-                System.out.println(0);
-                return;
+            // Calculates the profit
+            profit = prices[i] - cheapestPrice;
+
+            if (profit > maxProfit) {
+                maxProfit = profit;
             }
         }
 
-        for (int i = dayToBuy; i < prices.length; i++) {
-            if (prices[i] > mostExpensivePrice) {
-                mostExpensivePrice = prices[i];
-            }
-            profit = mostExpensivePrice - cheapestPrice;
-        }
-
-        System.out.println(profit);
+        System.out.println(maxProfit);
     }
-}
+    }

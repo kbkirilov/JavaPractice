@@ -25,26 +25,19 @@ In this example, the second and third sentences (underlined) have the same numbe
 
  */
 import java.util.Scanner;
+import java.util.SimpleTimeZone;
 
 public class Task2114MaxNumWordsFoundInSentance {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] sentences = scanner.nextLine().split(", ");
-        int maxWords = Integer.MIN_VALUE;
+        int maxWords = 0;
 
-        for (int i = 0; i < sentences.length; i++) {
-            // Temps is 1 because that's the least number of words we
-            // will have
-            int temp = 1;
-            String currSentence = sentences[i];
-            for (int j = 0; j < currSentence.length(); j++) {
-                if (currSentence.charAt(j) == ' ') {
-                    temp++;
-                }
-            }
-
-            if (temp > maxWords) {
-                maxWords = temp;
+        for (String sentence : sentences) {
+            // Splits the curr sentence into words
+            int wordCount = sentence.split(" ").length;
+            if (wordCount > maxWords) {
+                maxWords = wordCount;
             }
         }
 
